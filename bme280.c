@@ -80,9 +80,12 @@ int main() {
   float h = compensateHumidity(raw.humidity, &cal, t_fine);       // %
   float a = getAltitude(p);                         // meters
 
+   /*
   printf("{\"sensor\":\"bme280\", \"humidity\":%.2f, \"pressure\":%.2f,"
     " \"temperature\":%.2f, \"altitude\":%.2f, \"timestamp\":%d}\n",
     h, p, t, a, (int)time(NULL));
+*/
+     printf("%.2f %.2f %.2f %.2f\n", t, p, h, a);
 
   return 0;
 }
