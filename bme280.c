@@ -61,11 +61,11 @@ int main() {
 
   int fd = wiringPiI2CSetup(BME280_ADDRESS);
   if(fd < 0) {
-    printf("Device not found");
+    printf("0.0 0.0 0.0 0.0\n");
     return -1;
   }
   if(wiringPiI2CReadReg16(fd, BME280_REGISTER_DIG_T1) < 0) {
-    printf("Device not found");
+    printf("0.0 0.0 0.0 0.0\n");
     return -1;
   }   
 
