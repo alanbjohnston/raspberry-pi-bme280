@@ -60,6 +60,7 @@ https://github.com/adafruit/Adafruit_BME280_Library/blob/master/Adafruit_BME280.
 int main() {
 
   int fd = wiringPiI2CSetup(BME280_ADDRESS);
+  printf(fd); 
   if(fd < 0) {
     printf("Device not found");
     return -1;
