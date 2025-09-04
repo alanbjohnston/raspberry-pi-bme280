@@ -60,12 +60,14 @@ https://github.com/adafruit/Adafruit_BME280_Library/blob/master/Adafruit_BME280.
 int main() {
 
   int fd = wiringPiI2CSetup(BME280_ADDRESS);
-  printf("fd: %d\n", fd); 
-  printf("read: %d\n", wiringPiI2CReadReg16(fd, BME280_REGISTER_DIG_T1)); 
   if(fd < 0) {
     printf("Device not found");
     return -1;
   }
+  if(wiringPiI2CReadReg16(fd, BME280_REGISTER_DIG_T1) < 0) {
+    printf("Device not found");
+    return -1;
+  }   
 
   bme280_calib_data cal;
   readCalibrationData(fd, &cal);
