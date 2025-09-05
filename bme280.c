@@ -89,7 +89,7 @@ int main() {
     " \"temperature\":%.2f, \"altitude\":%.2f, \"timestamp\":%d}\n",
     h, p, t, a, (int)time(NULL));
 */
-     printf("%.2f %.2f %.2f %.2f\n", t, p, h, a);
+     printf("%.2f %.2f %.2f %.2f\n", t, p, a, h);
 
   return 0;
 }
